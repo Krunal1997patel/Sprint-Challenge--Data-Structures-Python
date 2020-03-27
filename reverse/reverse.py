@@ -57,10 +57,12 @@ class LinkedList:
         # if their is head but no next value, return the head
         elif node.get_next() == None:
             # return self.head.value
-            self.head = node
-            return
+            # self.head = node
+            return node
         # if their is a next value, reverse it and return it
         else:
             self.reverse_list(node.get_next())
+            # make first link to the last node in the reversed rest
             node.get_next().set_next(node)
+            # since first is the new last, make its link None
             node.set_next(None)
